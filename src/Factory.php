@@ -2,7 +2,6 @@
 
 namespace Laz0r\Config;
 
-use Laz0r\Config\Base\Config as BaseConfig;
 use Laz0r\Config\Base\Factory as BaseFactory;
 use Laz0r\Config\Base\FactoryInterface as BaseFactoryInterface;
 use ReflectionClass;
@@ -12,12 +11,12 @@ class Factory {
 	protected const PRODUCT = Config::class;
 
 	/**
-	 * @param array                                   $files
-	 * @param bool                                    $returnConfigObject
-	 * @param bool                                    $useIncludePath
-	 * @param null|\Laz0r\Config\Base\FactoryInterface $Factory
+	 * @param array $files
+	 * @param bool $returnConfigObject
+	 * @param bool $useIncludePath
+	 * @param \Laz0r\Config\Base\FactoryInterface|null $Factory
 	 *
-	 * @return array|\Laz0r\Config\ConfigInterface
+	 * @return \Laz0r\Config\ConfigInterface|array
 	 */
 	public static function fromFiles(
 		array $files,

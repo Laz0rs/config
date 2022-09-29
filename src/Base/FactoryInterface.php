@@ -6,10 +6,10 @@ interface FactoryInterface {
 
 	/**
 	 * @param array $files
-	 * @param bool  $returnConfigObject
-	 * @param bool  $useIncludePath
+	 * @param bool $returnConfigObject
+	 * @param bool $useIncludePath
 	 *
-	 * @return array|\Laz0r\Config\Base\Config
+	 * @return \Laz0r\Config\Base\Config|array
 	 */
 	public static function fromFiles(
 		array $files,

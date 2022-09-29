@@ -265,7 +265,7 @@ class ConfigTest extends TestCase {
 			->method("__set")
 			->with(
 				$this->identicalTo("Mah"),
-				$this->identicalTo($Stub)
+				$this->identicalTo($Stub),
 			);
 		$Sut->expects($this->once())
 			->method("getConfig")

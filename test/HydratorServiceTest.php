@@ -2,7 +2,7 @@
 
 namespace Laz0r\ConfigTest;
 
-use Laz0r\Config\{ConfigInterface,HydratorService};
+use Laz0r\Config\{ConfigInterface, HydratorService};
 use PHPUnit\Framework\TestCase;
 use stdClass;
 

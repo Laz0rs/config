@@ -10,10 +10,18 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 
 	private BaseConfig $Config;
 
+	/**
+	 * @return void
+	 */
 	public function __clone() {
 		$this->Config = clone $this->Config;
 	}
 
+	/**
+	 * @param array $array
+	 * @param bool $allowModifications
+	 * @param \Laz0r\Config\Base\Config|null $Config
+	 */
 	public function __construct(
 		array $array = [],
 		bool $allowModifications = false,
@@ -45,7 +53,7 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 
 	/**
 	 * @param string $name
-	 * @param mixed  $value
+	 * @param mixed $value
 	 *
 	 * @return void
 	 */
@@ -62,6 +70,9 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 		$this->getConfig()->__unset($name);
 	}
 
+	/**
+	 * @return int
+	 */
 	public function count() {
 		return $this->getConfig()->count();
 	}
@@ -94,16 +105,24 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 
 	public function merge(ConfigInterface $Config): ConfigInterface {
 		$this->getConfig()->merge(
-			new LaminasConfig($Config->toArray(), !($Config->isReadOnly()))
+			new LaminasConfig($Config->toArray(), !($Config->isReadOnly())),
 		);
 
 		return $this;
 	}
 
+	/**
+	 * @return void
+	 */
 	public function next() {
 		$this->getConfig()->next();
 	}
 
+	/**
+	 * @param mixed $offset
+	 *
+	 * @return bool
+	 */
 	public function offsetExists($offset) {
 		return $this->getConfig()->offsetExists($offset);
 	}
@@ -117,14 +136,28 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 		return $this->getConfig()->offsetGet($offset);
 	}
 
+	/**
+	 * @param mixed $offset
+	 * @param mixed $value
+	 *
+	 * @return void
+	 */
 	public function offsetSet($offset, $value) {
 		$this->getConfig()->offsetSet($offset, $value);
 	}
 
+	/**
+	 * @param mixed $offset
+	 *
+	 * @return void
+	 */
 	public function offsetUnset($offset) {
 		$this->getConfig()->offsetUnset($offset);
 	}
 
+	/**
+	 * @return void
+	 */
 	public function rewind() {
 		$this->getConfig()->rewind();
 	}
@@ -137,10 +170,16 @@ class Config extends AbstractConstructOnce implements ConfigInterface {
 		return $this->getConfig()->toArray();
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function valid() {
 		return $this->getConfig()->valid();
 	}
 
+	/**
+	 * @return \Laz0r\Config\Base\Config
+	 */
 	protected function getConfig(): BaseConfig {
 		return $this->Config;
 	}

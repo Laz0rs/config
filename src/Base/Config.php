@@ -6,6 +6,10 @@ use Laminas\Config\Config as LaminasConfig;
 
 class Config extends LaminasConfig {
 
+	/**
+	 * @param array $array
+	 * @param bool $allowModifications
+	 */
 	public function __construct(
 		array $array,
 		bool $allowModifications = false

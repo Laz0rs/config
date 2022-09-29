@@ -4,6 +4,11 @@ namespace Laz0r\Config;
 
 class HydratorService implements HydratorInterface {
 
+	/**
+	 * @param object $object Instance of ConfigInterface
+	 *
+	 * @return mixed[]
+	 */
 	public function extract(object $object): array {
 		assert($object instanceof ConfigInterface);
 

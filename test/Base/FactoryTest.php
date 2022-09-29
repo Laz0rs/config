@@ -47,6 +47,9 @@ class FactoryTest extends TestCase {
 	 * @depends testFromFilesArray
 	 * @depends testFromFilesObject
 	 *
+	 * @param array $a
+	 * @param array $b
+	 *
 	 * @return void
 	 */
 	public function testFromFilesPassesConfig(array $a, array $b): void {
